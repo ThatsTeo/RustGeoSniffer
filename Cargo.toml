@@ -1,0 +1,18 @@
+[package]
+name = "rust_geo_sniffer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# Utility
+regex = "1.10"
+chrono = "0.4"
+
+# For networks and JSON
+reqwest = { version = "0.12", features = ["blocking", "json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Telegram and GPIO
+teloxide = { version = "0.13", features = ["macros"] }
+rppal = "0.16"
