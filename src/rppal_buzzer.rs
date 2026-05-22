@@ -1,0 +1,28 @@
+// -=- BEEP BUZZER 3 TIMES -=-
+// use rppal::gpio::Gpio;
+// use std::thread;
+// use std::time::Duration;
+
+// // Define PIN for Buzzer
+// const BUZZ_PIN: u8 = 17;
+
+// fn main() -> Result<(), Box<dyn std::error::Error>> {
+//     println!("Starting GPIO...");
+
+//     // Initialize the GPIO Interface
+//     let gpio = Gpio::new()?;
+
+//     let mut buzzer_output = gpio.get(BUZZ_PIN)?.into_output();
+
+//     println!("Buzzer ready on PIN {}", BUZZ_PIN);
+
+//     for _ in 0..3 {
+//         buzzer_output.set_high();
+//         thread::sleep(Duration::from_millis(200));
+//         buzzer_output.set_low();
+//         thread::sleep(Duration::from_millis(200));
+//     }
+
+//     println!("Program ended...");
+//     Ok(())
+// }
