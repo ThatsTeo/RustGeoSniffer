@@ -3,13 +3,16 @@ mod rppal_gpio;
 mod tg_bot;
 mod wifi_scan;
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    println!("[DEBUG] Program test...");
-    // let reti = wifi_scan::iwlist_output_parsed();
-    // print!("{:?}", reti);
+fn main() {
+    // println!("[DEBUG] Program test...");
+    // let (lat, long, acc) = geolocation_api::get_coords()?;
+    // println!("{}, {}, {}", lat, long, acc);
+    // println!("[DEBUG] Test ended!");
 
-    let (lat, long, acc) = geolocation_api::get_coords()?;
-    println!("{}, {}, {}", lat, long, acc);
-    println!("[DEBUG] Test ended!");
-    Ok(())
+    println!("[BOT DEBUG] Started bot..");
+    std::thread::spawn(|| tg_bot::run_bot());
+    loop {
+        println!("Loop in progres...");
+        std::thread::sleep(std::time::Duration::from_secs(10));
+    }
 }
