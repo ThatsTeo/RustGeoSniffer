@@ -3,7 +3,7 @@ use std::{fmt::format, fs};
 
 use crate::wifi_scan::iwlist_output_parsed;
 
-pub fn get_api() -> String {
+fn get_api() -> String {
     let contents =
         fs::read_to_string("config.txt").expect("[API DEBUG] File 'config.txt' not found!");
 
