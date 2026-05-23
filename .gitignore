@@ -1,1 +1,11 @@
+# Target
 /target
+
+# File with APIs
+config.txt
+
+# Zed
+.zed/
+
+# macOS
+.DS_Store
