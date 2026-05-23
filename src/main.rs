@@ -7,5 +7,5 @@ fn main() {
     // let reti = wifi_scan::iwlist_output_parsed();
     // print!("{:?}", reti);
 
-    geolocation_api::get_api();
+    println!("{}", geolocation_api::get_api());
 }
