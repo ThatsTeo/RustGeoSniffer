@@ -17,10 +17,10 @@
 ### Demo on Telegram
 | Command                     | Result                    |
 |-----------------------------|---------------------------|
+| `/help`                     | Display possible commands |
 | `/locate` (good accuracy)   | Location found            |
 | `/locate` (accuracy > 100m) | Too imprecise             |
 | `/beep`                     | Buzzer activated          |
-| `/help`                     | Display possible commands |
 
 
 <img src="assets/core_demo.png" width="250"/>
@@ -76,7 +76,7 @@ GeoSniff/                   # Root folder
 ```
 
 ---
-<!--
+
 ## How to compile and build 🏁
 
 **First** you will ***need*** your Telegram Bot token and Google Cloud Geolocation API, then create a file named `config.txt`
@@ -91,9 +91,11 @@ TELEGRAM_TOKEN=1234
 then save the file and proced to the compile step.
 
 To **compile** the executable, open terminal and got in the **root folder** (`GeoSniff/`) and run: 
-- `mkdir build/` -> Used to create the build directory
-- `cd build/` -> Enter the newly created folder
-- `cmake ..` -> Generates the build files from CMakeLists.txt
-- `make -j4` -> use to compile all files
+1. Verify Rust is installed: `rustc --version` and `cargo --version`
+   If not, install from the [Rust official website](https://rust-lang.org/)
+2. Clone the repo and enter the root folder (`RustGeoSniffer/`)
+3. Create `config.txt` with your API keys (see template above)
+4. Build: `cargo build --release`
+5. Run: `./target/release/rust_geo_sniffer`
 
-### And you are done! Now to **execute** just run `./geo_sniff` and the program should start-->
+### And you are done! Now to **execute** just run `./target/release/rust_geo_sniffer` and the program should start
