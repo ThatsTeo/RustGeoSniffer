@@ -1,5 +1,5 @@
 use reqwest;
-use std::{fmt::format, fs};
+use std::fs;
 
 use crate::wifi_scan::iwlist_output_parsed;
 
@@ -22,7 +22,7 @@ fn get_api() -> String {
     String::new()
 }
 
-pub fn get_coords() -> Result<(f32, f32, f32), Box<dyn std::error::Error>> {
+pub fn get_coords() -> Result<(f64, f64, f32), Box<dyn std::error::Error + Send + Sync>> {
     let url = "https://www.googleapis.com/geolocation/v1/geolocate?key=";
     let gcg_api = get_api();
 
@@ -48,8 +48,8 @@ pub fn get_coords() -> Result<(f32, f32, f32), Box<dyn std::error::Error>> {
         .send()?
         .json::<serde_json::Value>()?;
 
-    let lat = res["location"]["lat"].as_f64().unwrap_or(0.0) as f32;
-    let lng = res["location"]["lng"].as_f64().unwrap_or(0.0) as f32;
+    let lat = res["location"]["lat"].as_f64().unwrap_or(0.0) as f64;
+    let lng = res["location"]["lng"].as_f64().unwrap_or(0.0) as f64;
     let accuracy = res["accuracy"].as_f64().unwrap_or(0.0) as f32;
 
     Ok((lat, lng, accuracy))
