@@ -6,7 +6,7 @@ use std::time::Duration;
 // Define PIN for Buzzer
 const BUZZ_PIN: u8 = 17;
 
-pub fn beep_buzzer() -> Result<(), Box<dyn std::error::Error>> {
+pub fn beep_buzzer() -> Result<(), Box<dyn std::error::Error + Send + Sync>> {
     println!("[GPIO DEBUG] Starting GPIO...");
 
     // Initialize the GPIO Interface
