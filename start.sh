@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cargo build --release || { echo "[SH BUILD ERROR] Cargo build failed!"; exit 1; }
+
 API_KEY=$(grep "^TELEGRAM_TOKEN=" config.txt | cut -d'=' -f2 | tr -d '[:space:]')
 
 if [ -z "$API_KEY" ]; then
