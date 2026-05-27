@@ -23,7 +23,12 @@
 | `/beep`                     | Buzzer activated          |
 
 
-<img src="assets/core_demo.png" width="250"/>
+<p align="center">
+  <img src="assets/core_demo.png" width="250"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="assets/autoscan_demo.png" width="250"/>
+</p>
+
 
 ---
 
