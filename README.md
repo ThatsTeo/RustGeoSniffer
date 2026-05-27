@@ -93,9 +93,10 @@ then save the file and proced to the compile step.
 To **compile** the executable, open terminal and got in the **root folder** (`GeoSniff/`) and run: 
 1. Verify Rust is installed: `rustc --version` and `cargo --version`
    If not, install from the [Rust official website](https://rust-lang.org/)
-2. Clone the repo and enter the root folder (`RustGeoSniffer/`)
+2. Clone the repo and enter the project root folder (`RustGeoSniffer/`)
 3. Create `config.txt` with your API keys (see template above)
-4. Build: `cargo build --release`
-5. Run: `./target/release/rust_geo_sniffer`
+4. Execute the start script with `./start.sh`
 
-### And you are done! Now to **execute** just run `./target/release/rust_geo_sniffer` and the program should start
+#### To see the program's log, just enter the tmux session with `tmux a -t geo_sniffer` and then detach with `Ctrl + B`, release both and then press `D`
+
+### And you are done! Now the program should start in a new Tmux session. To stop it, run the stop script with `./stop.sh`!

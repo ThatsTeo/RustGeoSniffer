@@ -12,4 +12,4 @@ fi
 echo "Bot TOKEN found!"
 export TELOXIDE_TOKEN=$API_KEY
 
-./target/release/rust_geo_sniffer
+tmux new-session -d -s geo_sniffer "./target/release/rust_geo_sniffer"
