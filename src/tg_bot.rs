@@ -121,7 +121,7 @@ fn locate_msg() -> Result<String, Box<dyn std::error::Error + Send + Sync>> {
     let mut msg = String::from("Accuracy to high, it's not ideal to update location now...");
     if acc <= 100f32 {
         msg = format!(
-            "Position: {lat}, {long}\nAccuracy: {acc}\nhttps://www.google.com/maps/place/{lat},{long}"
+            "Position: {lat}, {long}\nAccuracy: {acc} meter(s)\nhttps://www.google.com/maps/place/{lat},{long}"
         );
     }
     Ok(msg)
