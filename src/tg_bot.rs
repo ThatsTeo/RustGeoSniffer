@@ -102,7 +102,7 @@ async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
             }
         }
         Command::StopAutoLocate => {
-            if !STOP_THREAD.load(Ordering::Relaxed) {
+            if STOP_THREAD.load(Ordering::Relaxed) {
                 bot.send_message(msg.chat.id, format!("Auto location is alredy off!"))
                     .await?
             } else {
