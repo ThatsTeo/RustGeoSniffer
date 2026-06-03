@@ -21,6 +21,9 @@
 | `/locate` (good accuracy)   | Location found            |
 | `/locate` (accuracy > 100m) | Too imprecise             |
 | `/beep`                     | Buzzer activated          |
+|`/setdelay <num>`            | Set the delay between scans |
+| `/startautolocate`          | Start auto locating         |
+|`/stopautolocate`            | Stop auto locating if active|
 
 
 <p align="center">
@@ -66,7 +69,7 @@
 ## Project Structure 🗂️
 
 ```
-GeoSniff/                   # Root folder
+GeoSniff/                   # Project root folder
 ├── src/
 │   ├── geolocation_api.rs         # Parse output & obtain MACs
 │   ├── main.rs                    # Curl POST & geolocalization
@@ -75,9 +78,11 @@ GeoSniff/                   # Root folder
 ├── .gitignore
 ├── Cargo.lock              # Needed for Cargo.toml
 ├── Cargo.toml              # For project dependency and settings
-├── LICENSE                 # GNU GPL3 License
 ├── config.txt     <-----   # Where you will place your API 
-└── README.md               # This file
+├── LICENSE                 # GNU GPL3 License
+├── README.md               # This file
+├── start.sh                # Script to start the program
+└── stop.sh                 # Script to stop
 ```
 
 ---

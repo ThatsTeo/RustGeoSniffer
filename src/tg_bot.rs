@@ -42,7 +42,6 @@ enum Command {
 
 async fn answer(bot: Bot, msg: Message, cmd: Command) -> ResponseResult<()> {
     let delay: u64 = 1;
-    // let mut stopThread: bool = false;
 
     match cmd {
         Command::Help => {
